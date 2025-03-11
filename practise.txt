@@ -1,0 +1,1877 @@
+Write a Java program to replace the second ... by Deepak Vishwakarma
+
+Write a Java program to replace the second element of an ArrayList with the specified element.
+
+Write a Java program to clone an array list to another array list.
+
+Write a Java program to join two array lists.
+
+Write a Java program that swaps two elements in an array list.
+
+Write a Java program to reverse elements in an array list.
+
+Write a Java program to search for an element in an array list.
+
+
+// LinkedList Related Programs: Java progra... by Deepak Vishwakarma
+// LinkedList Related Programs:
+
+Java program to iterate through all elements in a linked list starting at the specified position.
+
+Java program to insert the specified element at the specified position in the linked list.
+
+Java program to get the first and last occurrence of the specified elements in a linked list.
+
+Java program that swaps two elements in a linked list.
+
+Java program to join two linked lists.
+
+Java program to copy a linked list to another linked list.
+
+Java program to convert a linked list to an array list.
+
+Java program to compare two linked lists.
+
+ //HashSet Related Programs Write a Java pro... by Deepak Vishwakarma
+//HashSet Related Programs
+
+Write a Java program to compare two sets and retain elements that are the same.
+
+Write a Java program to convert a hash set to an array.
+
+Write a Java program to clone a hash set to another hash set.
+
+// TreeSet
+
+Write a Java program to create a tree set, add some colors (strings) and print out the tree set.
+
+Write a Java program to create a reverse order view of the elements contained in a given tree set.
+
+Write a Java program to find numbers less than 7 in a tree set.
+
+Write a Java program to get the element in a tree set which is greater than or equal to the given element.
+
+Write a Java program to get the element in a tree set strictly greater than or equal to the given element.
+
+Write a Java program to remove a given element from a tree set.
+// MAP How do you add given key-value pair ... by Deepak Vishwakarma
+// MAP
+
+How do you add given key-value pair to HashMap if and only if it is not present in the HashMap?
+Write a Java program to copy all mappings from the specified map to another map.
+Write a Java program to test if a map contains a mapping for the specified value.
+Write a Java program to get a key-value mapping associated with the greatest key and the least key in a map
+Write a Java program to get a reverse order view of the keys contained in a given map.
+Write a Java program to get the portion of a map whose keys are strictly less than a given key.
+Write a Java program to get a key-value mapping associated with the greatest key strictly less than the given key. Return null if there is no such key.
+
+Need of Concurrent Collection:
+  - Traditional Collection object (Like ArrayList, HashMap etc. ) can be accessed by Multiple Threads simultaneously and there may be
+    a chance of data Inconsistency Problems & hence these are not Thread Safe.
+  - Performance wise already existing Thread safe collections (Vector, Hashtable, synchronizedList(), synchronizedMap(), synchronizedSet()) are not upto the mark.
+  - Because for every operation even for read operation, total collection will be loaded by only one Thread at a Time and it increases waiting time of Threads.
+  - Another Big Problem with traditional Collections is while one Thread iterating collection, the other Threads are not allowed to Modify Collection
+    object simultaneously and if we are trying to modify then we will get ConcurrentModificationException
+
+  * Hence these Traditional Collection Objects are not suitable for scalable multi threaded applications.
+  * To overcome these problems Concurrent Collections is introduced in 1.5 version
+
+//Concurrent Collection Vs Traditional Collection
+  - Concurrent Collections are Always Thread Safe
+  - When compared with traditional Thread Safe Collections, Performance is more bcoz of different Locking Mechanism (Bucket Level Lock | Segment Lock)
+  - While one thread interacting Collection the other threads are allowed to modify Collection in safe Manner.
+
+// ConcurrentMap(I): java.util.Concurrent package | 
+  - Methods:
+    1. Object putIfAbsent(Object key, Object value); // If key is matched don't do any thing, just return the existing mapping
+    2. boolean remove(Object key, Object value);
+      - m.put(1,"A")
+        m.remove(1) // return {}
+      - m.remove(1,"B") // Key-Value both should be matched
+    3. boolean replace(Object key, object oldValue,Object newValue);
+      - If key-value matched in a map then old value will be replaced with new value
+
+// Concurrent Classes Are:
+  1. ConcurrentHashMap
+  2. CopyOnWriteArrayList
+  3. CopyOnWriteArraySet
+
+// ConcurrentHashMap (C): Map(I)->ConcurrentMap(I)->ConcurrentHashMap(C)| DS is Hashtable
+  - ConcurrentHashMap allows Concurrent Read and Thread Safe Update Operations
+  - To perform Read Operation Thread won't require any Lock. But to perform Update Operation Thread requires Lock but it is the Lock
+    of only a particular Part of Map(Bucket Level Lock) | Segment | smaller HashMap
+  - Concurrent Update achieved by internally dividing Map into smaller portion, which is defined by Concurrency Level
+  - The Default Concurrency level is 16.
+  - ConcurrentHashMap Allows any number of Read Operation and simultaneously 16 write (Update) Operations.
+  - null is not allowed for both keys and values
+
+->Constructors:
+    1. ConcurrentHashMap m=new ConcurrentHashMap();
+      - Creates an empty ConcurrentHashMap with Default initial capacity 16 and default fill ratio 0.75 and default concurrency level 16.
+    2. ConcurrentHashMap m=new ConcurrentHashMap(int initialCapacity);
+    3. ConcurrentHashMap m=new ConcurrentHashMap(int initialCapacity, float fillRatio);
+    4. ConcurrentHashMap m=new ConcurrentHashMap(int initialCapacity, float fillRatio, int concurrencyLevel);
+    5. ConcurrentHashMap m=new ConcurrentHashMap(Map m);
+
+Java 8: no segmentation | Compare and swap approach | no locking except resizing or collision
+    : Thread A last saw--> x =30;
+    : Thread A work --> x to 50
+    : If x is still 30, then change it to 50 else don't change and retry(wait for sort random time)
+
+21 January
+#Lambda Expression with Functional Interfac... by Deepak Vishwakarma
+Deepak Vishwakarma
+21-01 17:41
+
+#Lambda Expression with Functional Interface
+
+program to implement a lambda expression to find the sum of two integers
+program to implement a lambda expression to check if a given string is empty.
+program to implement a lambda expression to convert a list of strings to uppercase and lowercase.
+program to implement a lambda expression to find the second largest and smallest element in an array.
+program to implement a lambda expression to sort a list of strings in alphabetical order.
+program to implement a lambda expression to remove duplicates from a list of integers.
+Write a lambda expression to implement a lambda expression to calculate the factorial of a given number.
+Java program to implement a lambda expression to find the average length of strings in a list.
+Java program to implement a lambda expression to find the length of the longest and smallest string in a list.
+Java program to implement a lambda expression to calculate the sum of all prime numbers in a given range
+Java Stream API   Given a list of integers,... by Deepak Vishwakarma
+Java Stream API
+
+Given a list of integers, find out all the even numbers that exist in the list using Stream functions?
+Given a list of integers, find out all the numbers starting with 1 using Stream functions?
+How to find duplicate elements in a given integers list in java using Stream functions?
+Given the list of integers, find the first element of the list using Stream functions?
+Given a list of integers, find the total number of elements present in the list using Stream functions?
+Given a list of integers, sort all the values present in it using Stream functions?
+Given a list of integers, sort all the values present in it in descending order using Stream functions?
+Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+Write a Java 8 program to concatenate two Streams?
+How to find only duplicate elements with its count from the String ArrayList in Java8?
+Remove all empty Strings from List
+Get count, min, max, sum, and the average for numbers
+// Package Structures
+Controller-> Class | basepackage.controller
+DAO|DTO|Proxy -> class | basepackage.proxy
+Service -> Interface | basepackage.service
+ServiceImpl-> class | basepackage.service.implementation
+Repository-> Interface | basepackage.repository
+Entity-> class | basepackage.entity or basepackage.domain
+
+Text
+// Create a Spring Boot Project with the following details: Project-SuperHero
+1. Controller: SuperHeroController
+2. Service: SuperHeroService
+3. Service Implementation: SuperHeroServiceImpl
+4. Repository: SuperHeroRepo (Extends JpaRepository)
+5. Entity/Domain: SuperHero with the following attributes:
+
+    a. Long id
+        - Validation: Cannot be null or empty, must be an integer.
+    b. String userName
+        - Validation: Cannot be null or empty, must have a minimum length of 5 characters.
+    c. String name
+        - Validation: Cannot be null or empty, must be a valid string.
+    d. String gender
+    e. String emailId
+        - Validation: Cannot be null or empty, must be a valid email format.
+    f. String movies
+        - Validation: Cannot be null or empty, must be a valid string.
+        Note: Stores a stringified array in case of multiple movies.
+    g. Long mobileNo
+        - Validation: Cannot be null or empty, must contain exactly 10 digits and only numeric values.
+    h. String address
+        - Validation: Cannot be null or empty, must be a valid string.
+    i. String pinCode
+        - Validation: Cannot be null or empty, must contain exactly 6 digits and only numeric values.
+
+- Use core Java logic, patterns, or regular expressions for validation in an optimized manner.
+
+CRUD Operations:
+
+    C - Add a SuperHero
+    R - Retrieve all SuperHeroes
+    R - Retrieve a SuperHero by ID
+    U - Update a SuperHero by ID (with necessary fields)
+    D - Delete a SuperHero by ID
+    D - Delete all records from the table
+    
+Mandatory Field Validation: Ensure all required fields are properly validated before processing the request.
+
+lets connect by Deepak Vishwakarma
+Deepak Vishwakarma
+03-02 15:03
+
+
+lets connect
+
+Join using calender link by Deepak Vishwakarma
+Deepak Vishwakarma
+03-02 15:03
+
+Join using calender link
+
+  package com.student.mapper.service.impl; ... by Deepak Vishwakarma
+Deepak Vishwakarma
+03-02 18:20
+
+
+ 
+
+Plain Text
+
+
+package com.student.mapper.service.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.student.mapper.domain.Student;
+import com.student.mapper.proxy.StudentProxy;
+import com.student.mapper.repo.StudentRepo;
+import com.student.mapper.service.StudentService;
+
+@Service
+public class StudentImpl implements StudentService {
+
+  @Autowired
+  private StudentRepo repo;
+
+  @Autowired
+  private ModelMapper mapper;
+
+  @Override
+  public String addStudent(StudentProxy stdProxy) {
+
+    Student s = mapper.map(stdProxy, Student.class);
+
+    repo.save(s);
+
+    return "Student added successfully";
+  }
+
+  @Override
+  public List<StudentProxy> getAllStudent() {
+
+    List<Student> lstStd = repo.findAll();
+//    List<StudentProxy> lstStdProxy = new ArrayList<>();
+
+//    lstStd.stream().forEach(s -> {
+//      lstStdProxy.add(mapper.map(s, StudentProxy.class));
+//    });
+
+    List<StudentProxy> lstStdProxy= lstStd.stream().map(s -> mapper.map(s, StudentProxy.class)).collect(Collectors.toList());
+
+    return lstStdProxy;
+  }
+
+  @Override
+  public StudentProxy getStudent(Long id) {
+    Student std = repo.findById(id).get();
+    StudentProxy s = mapper.map(std, StudentProxy.class);
+
+    return s;
+  }
+
+  @Override
+  public String deleteStudentById(Long id) {
+    repo.deleteById(id);
+    return "Student deleted successfully";
+  }
+
+  @Override
+  public String updateStudentbyId(StudentProxy stdProxy) {
+    Optional<Student> byId = repo.findById(stdProxy.getId());
+    if (byId.isPresent()) {
+      Student std = byId.get();
+      if (!stdProxy.getName().equals(""))
+        std.setName(stdProxy.getName());
+      if (!stdProxy.getGender().equals(""))
+        std.setGender(stdProxy.getGender());
+      if (!stdProxy.getAddress().equals(""))
+        std.setAddress(stdProxy.getAddress());
+      repo.save(std);
+      return "Student is updated with given data";
+    } else {
+      return "Student id not available in db";
+    }
+
+  }
+
+}
+
+ 
+@ Bean   ModelMapper modelMapper() {      r... by Deepak Vishwakarma
+Deepak Vishwakarma
+03-02 18:21
+
+@Bean
+
+  ModelMapper modelMapper() {
+
+    return new ModelMapper();
+
+  }
+
+04 February
+  package com.student.exception.globalexcep... by Deepak Vishwakarma
+Deepak Vishwakarma
+04-02 16:39
+
+
+ 
+
+Plain Text
+
+
+package com.student.exception.globalexception;
+
+import java.util.NoSuchElementException;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import com.student.exception.exception.EmptyListException;
+
+@RestControllerAdvice
+public class StudentGlobalException {
+
+  @ExceptionHandler(value = NoSuchElementException.class)
+  @ResponseStatus(value = HttpStatus.BAD_REQUEST)
+  public ErrorResponse noSuchElementException(NoSuchElementException ex) {
+    return new ErrorResponse("No Record Found based on Given Input", "1000", ex.toString());
+  }
+
+  @ExceptionHandler(value = EmptyListException.class)
+  @ResponseStatus(value = HttpStatus.NOT_FOUND)
+  public ErrorResponse listEmptyException(EmptyListException ex) {
+    return new ErrorResponse(ex.getErrMessage(), ex.getErrCode(), ex.toString());
+  }
+
+  @ExceptionHandler(value = Exception.class)
+  @ResponseStatus(value = HttpStatus.BAD_REQUEST)
+  public ErrorResponse generalizedErrorException(Exception e) {
+    return new ErrorResponse("Something went wrong !!!", "4040", e.toString());
+  }
+}
+  // Error Response Model Class package com... by Deepak Vishwakarma
+Deepak Vishwakarma
+04-02 16:39
+
+ 
+
+Plain Text
+
+
+// Error Response Model Class
+package com.student.exception.globalexception;
+
+import org.springframework.stereotype.Component;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Component
+public class ErrorResponse {
+
+  private String errorMessage;
+  private String errorCode;
+  private String traceRoute;
+}
+ 
+  // Own Exception package com.student.exce... by Deepak Vishwakarma
+Deepak Vishwakarma
+04-02 16:40
+
+ 
+
+Plain Text
+
+
+// Own Exception
+
+package com.student.exception.exception;
+
+import org.springframework.stereotype.Component;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Component
+@Getter
+@Setter
+@ToString
+public class EmptyListException extends RuntimeException {
+  /**
+   * 
+   */
+  private static final long serialVersionUID = 1L;
+  private String errMessage;
+  private String errCode;
+
+}
+ 
+  // Service Impl package com.student.excep... by Deepak Vishwakarma
+Deepak Vishwakarma
+04-02 16:42
+
+ 
+
+Plain Text
+
+
+// Service Impl
+
+
+
+package com.student.exception.service.impl;
+
+
+
+import java.util.List;
+import java.util.Optional;
+
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+
+
+import com.student.exception.domain.StudentEntity;
+import com.student.exception.exception.EmptyListException;
+import com.student.exception.proxy.StudentProxy;
+import com.student.exception.repo.StudentRepo;
+import com.student.exception.service.StudentService;
+import com.student.exception.utils.Helper;
+
+
+
+@Service
+public class StudentServiceImpl implements StudentService {
+
+
+
+  @Autowired
+  private StudentRepo stdRepo;
+
+
+
+  @Autowired
+  private Helper helper;
+
+
+
+  @Override
+  public StudentProxy getStudentById(Long id) {
+    return helper.convertEntityToProxy(stdRepo.findById(id).get());
+  }
+
+
+
+  @Override
+  public List<StudentProxy> getAllStudent() {
+    List<StudentProxy> allStudents = helper.convertListEntityToProxy(stdRepo.findAll());
+    if (allStudents.isEmpty())
+      throw new EmptyListException("List is Empty", "1015");
+    else
+      return allStudents;
+
+
+
+  }
+
+
+
+  @Override
+  public String deleteStudentById(Long id) {
+    stdRepo.deleteById(id);
+    return "Student is deleted based on given id";
+  }
+
+
+
+  @Override
+  public String udpateStudent(Long id, StudentProxy std) {
+    Optional<StudentEntity> stdbyId = stdRepo.findById(id);
+    if (stdbyId.isPresent()) {
+      StudentEntity stdTbl = stdbyId.get(); // Table Related Object
+
+
+
+      System.out.println("Student Proxy+>" + std);
+
+
+
+      if (!std.equals(null)) {
+        if (std.getAddress() != null && !std.getAddress().isEmpty()) {
+          stdTbl.setAddress(std.getAddress());
+        }
+        if (std.getGrade() != null && !std.getGrade().isEmpty()) {
+          stdTbl.setGrade(std.getGrade());
+        }
+        if (std.getName() != null && !std.getName().isEmpty()) {
+          stdTbl.setName(std.getName());
+        }
+        System.out.println("Student Entity :" + stdTbl);
+        stdRepo.save(stdTbl);
+        return "Student Record Updated Successfully";
+      } else {
+        return "Nothing to Update";
+      }
+
+
+
+    } else {
+      return "No Student Record found based on given Id";
+    }
+  }
+
+
+
+  @Override
+  public String deleteAllStudent() {
+
+
+
+    stdRepo.deleteAll();
+    return "All records deleted Successfully";
+  }
+
+
+
+  @Override
+  public StudentProxy saveStudent(StudentProxy std) {
+    return helper.convertEntityToProxy(stdRepo.save(helper.convertProxyToEntity(std)));
+  }
+
+
+
+}
+ 
+  package com.student.exception.utils; impo... by Deepak Vishwakarma
+Deepak Vishwakarma
+04-02 16:42
+
+ 
+
+Plain Text
+
+
+package com.student.exception.utils;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.student.exception.domain.StudentEntity;
+import com.student.exception.proxy.StudentProxy;
+
+@Component
+public class Helper {
+
+  @Autowired
+  private ObjectMapper mapper;
+
+  public StudentProxy convertEntityToProxy(StudentEntity std) {
+    return mapper.convertValue(std, StudentProxy.class);
+  }
+
+  public StudentEntity convertProxyToEntity(StudentProxy std) {
+    return mapper.convertValue(std, StudentEntity.class);
+  }
+
+  public List<StudentProxy> convertListEntityToProxy(List<StudentEntity> lstStd) {
+//    List<StudentProxy> stdProxy = new ArrayList<>();
+//    for (StudentEntity studentEntity : lstStd) {
+//      stdProxy.add(mapper.convertValue(studentEntity, StudentProxy.class));
+//    }
+//    return stdProxy;
+
+    return lstStd.stream().map(s -> mapper.convertValue(s, StudentProxy.class)).collect(Collectors.toList());
+  }
+}
+ 
+05 February
+  // Annotation used in Validation @NotNull... by Deepak Vishwakarma
+Deepak Vishwakarma
+05-02 15:33
+
+
+ 
+
+Plain Text
+
+
+// Annotation used in Validation
+@NotNull  Char Sequence, Collection, Map, or Array object can be validated with this and they should not be null but can be empty
+@NotEmpty  Char Sequence, Collection, Map, or Array object can be validated with this and they should not be null and not empty
+@NotBlank  Char Sequence, Collection, Map, or Array objects can be validated with this and they should not be null and not empty and not blank
+@Min  Given Minimum value has to be satisfied
+@Max  Given Maximum value has to be satisfied
+@Size  Field size should be less than or greater than the specified field size
+@Email  Email can be validated with this
+@Pattern  Given RegEx Pattern has to be satisfied.
+ 
+
+@ExceptionHandler(value = MethodArgumentNot... by Deepak Vishwakarma
+Deepak Vishwakarma
+05-02 15:33
+
+@ExceptionHandler(value = MethodArgumentNotValidException.class)
+
+  @ResponseStatus(value = HttpStatus.FOUND)
+
+  public Map<String, String> methodArgumentNotValidException(MethodArgumentNotValidException ex) {
+
+    Map<String, String> errMap = new HashMap<>();
+
+    ex.getAllErrors().forEach(err -> {
+
+      String fieldName = ((FieldError) err).getField();
+
+      String value = err.getDefaultMessage();
+
+      errMap.put(fieldName, value);
+
+      
+
+      //errMap.put(((FieldError) err).getField(), err.getDefaultMessage());
+
+    });
+
+    return errMap;
+
+  }
+
+Link https://www.youtube.com/watch?v=P5sAaF... by Deepak Vishwakarma
+Deepak Vishwakarma
+05-02 16:23
+
+
+https://www.youtube.com/watch?v=P5sAaFY3O2w&ab_channel=JavaTechie
+
+
+YouTube
+Video poster
+Spring Boot - Creating Custom Annotation For Validation | InterviewQA | JavaTechie
+
+Java Techie
+
+62.5K views · 2 years ago
+
+
+Open
+By using YouTube, you agree to the 
+privacy policy
+, 
+terms of use
+, and 
+permissions
+.
+
+06 February
+Link https://www.simplilearn.com/tutorials/... by Deepak Vishwakarma
+Deepak Vishwakarma
+06-02 11:31
+
+
+https://www.simplilearn.com/tutorials/java-tutorial/enum-in-java
+
+Enum in Java: Learn the Basics Of Enumeration With Examples
+
+Ravikiran A S
+
+Learn everything about Enums in Java: definitions, usage, syntax, and best practices. Master Java Enums to enhance your skills and code efficiently.
+
+
+Simplilearn.com
+Message by Deepak Vishwakarma
+Deepak Vishwakarma
+06-02 12:40
+
+
+JPA Entity
+ 
+Text
+// JPA Entity
+
+-- @Entity : Use to Mark any class as a Entity
+-- @Table : Use to change the table details.
+    * name: specifies the name of the table in the database.
+    * schema :the schema where the table should be created.
+    * catalogue
+    * unique constraints
+-- @Id : Mark column as id i.e. Primary Key
+-- @GeneratedValue: Instructs JPA to manage primary key generation, so we don't have to do it manually
+    - strategy (GenerationType) - specifies how we want the key to be generated. The default value, GenerationType.AUTO lets JPA choose which strategy (TABLE, SEQUENCE, or IDENTITY) is best for your configuration.
+    
+    * GenertedType.IDENTITY : DB is responsible to determining and assigning the next primary key
+    * GenertedType.SEQUENCE : It uses @SequenceGenerator 
+    * GenertedType.AUTO : Hibernate generate seperate sequence table (Based on DB type)
+-- @Column : Provides control over the database column definition
+    * Name (String) : Specifies the intended column name in the database.
+    * length (int): Size of the column | Specifies the maximum data length that can be saved in field.
+    * unique (boolean) : The column is marked for containing only unique values |  Are duplicate values are permitted in the column.
+    * nullable (boolean) : Indicates whether this column can be null in the database | The column value should not be nullable
+    * precision (int) - how many decimal places to allow for numerical values.
+    * updatable (boolean) - whether to include or exclude this field in an update statement.
+Example:
+
+    @Column(name="sid", nullable=false, length=512, unique=true,updatable = false)
+    private String id;
+
+-- @Transient : Sometimes, we may want to make a field non-persistent. We can use the @Transient annotation to do so. It specifies that the field won’t be persisted.
+-- @Temporal : This annotation is used to format the date for storing in the db
+Example:
+    @Temporal(TemporalType.DATE)
+    java.util.Date createDate;
+
+-- @Lob : Tells hibernate, this is a large object - We can store image (format BLOB)
+-- @Enumerated(EnumType.STRING) : We can use the @Enumerated annotation to specify whether the enum should be persisted by name or by ordinal (default)
+Example:
+public enum Gender {
+    MALE, 
+    FEMALE
+}
+
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
+
+-- 
+
+
+@CreationTimestamp //@UpdateTimestamp
+
+07 February
+Message by Deepak Vishwakarma
+Deepak Vishwakarma
+07-02 10:57
+
+
+Project- JPA Mapping
+ 
+Text
+// Student Management System (SMS)
+Project with following description:
+
+    1. Project Name: StudentManagementSystem
+        - Group ID: com.sms
+        - Package Id: com.sms.student
+        - Artifact ID:StudentManagementSystem
+    2. Controller : com.sms.student.controller
+        - Name: StdController
+            1. APIs for Student: 
+                GET: /getAllStudent
+                POST: /saveStudent
+                UPDATE: /updateStudent/{id}
+                DELETE: /deleteStudent/{id}
+            
+            2. APIs For Branch:
+                GET: /getAllBranch
+                POST: /saveBranch
+                UPDATE: /updateBranch/{id}
+                DELETE: /deleteBranch/{id}
+    3. Proxy: (Use Springboot Validations) - com.sms.student.proxy
+        - Name: StudentProxy (sid,name,gender(use enum),dob,address,branch)
+        - Name: BranchProxy (bid,name,description,collegeName)
+    4. Domain: (Use Entity Annotations) com.sms.student.domain
+        - Name: Student (sid,name,gender(use enum),dob,address,branch)
+        - Name: Branch(bid,name,description,collegeName)
+    5. Exception Handler: com.sms.student.global.exception
+        - Name: GlobalException 
+        - Add Global Exception Handling for springboot validation and common exception- 
+    6. Service: com.sms.student.service
+        - Name: StudentServices
+        - Name: BranchServices
+    7. Service Implementation:com.sms.student.service.impl
+        - Name: StudentServiceImpl
+        - Name: BranchServiceImpl
+    8. Utils:com.sms.student.util
+        - Name: MapperUtils (Use Object Mapper)
+    9. Repository:com.sms.student.repo
+        - Name: StudentRepo (Use JPA CRUD Repository)
+        - Name: Branch Repo (Use JPA CRUD Repository)
+
+- Validate Request and send proper response to user
+
+spring.jpa.show-sql= true spring.jpa.proper... by Deepak Vishwakarma
+Deepak Vishwakarma
+07-02 14:21
+
+
+spring.jpa.show-sql=true
+
+spring.jpa.properties.hibernate.format_sql=true
+
+10 February
+Message by Deepak Vishwakarma
+Deepak Vishwakarma
+10-02 12:27
+
+
+Branch Enty
+ 
+Text
+@Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class BranchEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long bid;
+    private String name;
+    private String technology;
+    @OneToOne(mappedBy = "branch")
+//  @JsonBackReference
+    private StdEntity stdEntity;
+}
+
+Message by Deepak Vishwakarma
+Deepak Vishwakarma
+10-02 12:29
+
+Student Enty
+ 
+Text
+package com.student.exception.domain;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class BranchEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long bid;
+    private String name;
+    private String technology;
+    @OneToOne(mappedBy = "branch")
+//  @JsonBackReference
+    private StdEntity stdEntity;
+}
+
+Message by Deepak Vishwakarma
+Deepak Vishwakarma
+10-02 12:32
+
+Branch Proxy Mapping
+ 
+Text
+package com.student.exception.utils;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.student.exception.domain.BranchEntity;
+import com.student.exception.domain.StdEntity;
+import com.student.exception.proxy.BranchProxy;
+import com.student.exception.proxy.StudentProxy;
+
+@Component
+public class MapperUtil {
+
+    @Autowired
+    private ObjectMapper mapper;
+
+    public StdEntity proxyToEntity(StudentProxy stdProxy) {
+        return mapper.convertValue(stdProxy, StdEntity.class);
+    }
+
+    public StudentProxy entityToProxy(StdEntity stdEntity) {
+        return mapper.convertValue(stdEntity, StudentProxy.class);
+    }
+
+    public BranchEntity proxyToEntityB(BranchProxy brProxy) {
+        return mapper.convertValue(brProxy, BranchEntity.class);
+    }
+
+    public BranchProxy entityToProxyB(BranchEntity brEntity) {
+        BranchProxy brproxy = new BranchProxy();
+        brproxy.setBid(brEntity.getBid());
+        brproxy.setName(brEntity.getName());
+        brproxy.setTechnology(brEntity.getTechnology());
+        
+        StudentProxy stdProxy=new StudentProxy();
+        stdProxy.setSid(brEntity.getStdEntity().getSid());
+        stdProxy.setName(brEntity.getStdEntity().getName());
+        stdProxy.setAddress(brEntity.getStdEntity().getAddress());
+        stdProxy.setGender(brEntity.getStdEntity().getGender());
+        stdProxy.setBranch(null);
+        
+        brproxy.setStd(stdProxy);
+
+        return brproxy;
+
+    }
+
+}
+
+StdEntity stdEntity = stdRepo.findById(si... by Deepak Vishwakarma
+Deepak Vishwakarma
+10-02 12:42
+
+
+StdEntity stdEntity = stdRepo.findById(sid).get();
+
+    stdEntity.getBranch().setStdEntity(null);
+
+    StudentProxy entityToProxy = mapperUtil.entityToProxy(stdEntity);
+
+    return entityToProxy;
+
+10-02 14:18
+ 
+Krishna Sharma started a meeting.
+Meeting ended at 10-02 14:21 after 2 minutes 51 seconds
+10-02 14:21 Meeting ended 2m 51s
+Message by Deepak Vishwakarma
+Deepak Vishwakarma
+10-02 18:12
+
+
+Text
+@Override
+    public String saveBranch(BranchProxy brProxy) {
+
+        BranchEntity brEntity = mapperUtil.proxyToEntityB(brProxy);
+        brEntity.getStdEntity().setBranch(brEntity);// Parent ref to child entity
+        branchRepo.save(brEntity);
+        return "Saved";
+    }
+
+12 February
+Link https://github.com/DiUS/java-faker Thi... by Deepak Vishwakarma
+Deepak Vishwakarma
+12-02 18:14
+
+
+https://github.com/DiUS/java-faker
+
+
+GitHub
+
+
+Repository
+
+|
+
+DiUS/java-faker
+
+Brings the popular ruby faker gem to Java
+
+Java
+
+•
+
+4819 Stars
+
+•
+
+131 Watching
+
+•
+
+Updated 2 days ago
+
+
+View Repository
+13 February
+Link https://docs.spring.io/spring-data/jpa... by Deepak Vishwakarma
+Deepak Vishwakarma
+13-02 15:52
+
+
+https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html
+
+  @Override   public Page<HarryPotterProxy>... by Anshul Patel
+Anshul Patel
+13-02 17:58
+
+
+ 
+
+Plain Text
+
+
+@Override
+  public Page<HarryPotterProxy> getAllHarrryPotter(int pageNumber, int pageSize, String sortBy, String sortDir) {
+
+//    Page<HarryPotter> hpPage = getAllHarrryPotterInternal(pageNumber, pageSize, sortBy, sortDir);
+
+    Sort sort = (sortDir.equalsIgnoreCase("desc")) ? (Sort.by(sortBy).descending()) : (Sort.by(sortBy).ascending());
+
+    // page number default start 0
+    Pageable pageable = PageRequest.of(pageNumber, pageSize, sort);
+
+    Page<HarryPotter> hpPage = repo.findAll(pageable);
+
+    List<HarryPotterProxy> collect = hpPage.getContent().stream().map(hp -> mapper.domainToProxyForHarryPotter(hp))
+        .collect(Collectors.toList());
+
+    Page<HarryPotterProxy> pages = new PageImpl<HarryPotterProxy>(collect, pageable, hpPage.getTotalElements());
+
+    return pages;
+    // return repo.findAll(hpPage);
+  }
+14 February
+@Override    public List<StudentProxy> fin... by Deep Patel
+Deep Patel
+14-02 10:59
+
+
+@Override
+
+  public List<StudentProxy> findByRange(Long start, Long end) {
+
+//    List<StudentProxy> studentProxies = new ArrayList<>();
+
+//
+
+//    for (Long i = start; i <= end; i++) {
+
+//      studentProxies.add(utility.StudentEntitytoStudentProxy(repo.findById(i).get()));
+
+//    }
+
+//
+
+//    return studentProxies;
+
+ 
+
+    return utility.ListofStudentEntitytoStudentProxy(repo.findByIdBetween(start, end));
+
+  }
+
+  List<StudentEntity> findByIdBetween(Long ... by Deep Patel
+Deep Patel
+14-02 10:59
+
+  List<StudentEntity> findByIdBetween(Long start, Long end);
+
+ 
+
+  std.setPincode( new Random().nextInt(900... by Krishna Sharma
+Krishna Sharma
+14-02 11:06
+
+
+  std.setPincode(new Random().nextInt(900000) + 100000);
+
+17 February
+  // ResponseEntity:   - The ResponseEntity... by Deepak Vishwakarma
+Deepak Vishwakarma
+17-02 16:59
+
+
+ 
+
+Plain Text
+
+
+// ResponseEntity:
+  - The ResponseEntity class is a part of the Spring Framework and is commonly used in
+    Springboot applications to customize the HTTP response.
+    It Provides methods for setting the response status, headers and body.
+    We can use it to return different types of data in our controller methods,
+    such as JSON, XML or HTML.
+
+// Upload and Download Image
+
+-> To View
+  return ResponseEntity.status(HttpStatus.OK)
+             .contentType(MediaType.valueOf(IMAGE_PNG_VALUE))
+             .body(downloadFile.getImageData());
+
+
+-> To Download
+  return ResponseEntity.ok()
+             .header(HttpHeaders.CONTENT_DISPOSITION,
+             "attachment; filename=\"" + downloadFile.getImgName() + "\"")
+             .body(downloadFile.getImageData());
+
+
+
+
+HTTP headers | Content-Disposition:
+The HTTP Content Disposition is a response-type header field that gives information
+on how to process the response payload and additional information such as filename when
+user saves it locally.
+18 February
+Message by Deepak Vishwakarma, has an attachment.
+Deepak Vishwakarma
+18-02 12:33
+
+
+EMS_Employee.zip
+
+Files.readAllBytes(new File(Absolute Path).... by Deepak Vishwakarma
+Deepak Vishwakarma
+18-02 12:35
+
+Files.readAllBytes(new File(Absolute Path).toPath())
+
+19 February
+  Step 1: Create an excel sheet -> Done Ste... by Deepak Vishwakarma
+Deepak Vishwakarma
+19-02 15:55
+
+
+ 
+
+Plain Text
+
+
+Step 1: Create an excel sheet -> Done
+
+Step 2: Get Input Stream from MultipartFile  Done
+
+
+Step 3: Add Apache POI-OOXML Maven Dependency in POM.XML // DONE
+
+Step 4: Create an Excel workbook using InputStream // DONE
+
+Step 5: Create/Get Sheet from workbook // name of sheet // DONE
+
+Step 6: Get Row Iterator -> DONE
+
+Step 7: Get Cell Iterator -> DONE
+     // Prepare Object
+
+Step 8: Prepare List of Objects // DONE
+  // close the workbook
+ 
+  https://springjava.com/spring-boot/how-to... by Deepak Vishwakarma
+Deepak Vishwakarma
+19-02 16:01
+
+
+ 
+
+Plain Text
+
+
+https://springjava.com/spring-boot/how-to-import-data-from-excel-file-in-spring-boot/
+ 
+21 February
+  by Deepak Vishwakarma
+Deepak Vishwakarma
+21-02 10:54
+Edited
+
+
+Springboot Security P-1
+ 
+Text
+Springboot Security
+
+1. Add spring-boot-starter-security dependency in pom.xml
+2. Configure Username and Password
+
+3. Create Config class and annote with 
+    @Configuration
+    @EnableWebSecurity
+
+4. Create Bean of SecurityFilterChain and get the object using HttpSecurity class
+
+5. Setup Configuration for SecurityFilterChain Object
+
+    a. Disable CSRF
+        http.csrf(AbstractHttpConfigurer::disable)
+    b. Authorize Request
+        http.authorizeHttpRequests(
+                auth->auth.requestMatchers("/getAllStudent").permitAll()
+                          .anyRequest().authenticated()     
+        );
+    c. Add Form Login for browser
+        http.formLogin(Customizer.withDefaults());
+        
+    d. Enable API call from Post like Device
+        http.httpBasic(Customizer.withDefaults());
+        
+    e. Set Session Management Policy
+        http.sessionManagement(s->s.sessionCreationPolicy(SessionCreationPolicy.STATEESS));
+    
+    f. Build the Object
+        http.build();
+        
+7. InMemory Users - Create Bean of UserDetailsService
+
+    a. Create Multiple Users
+    b. Get Object of UserDetailsService Using InMemoryUserDetailsManager(with Users)
+
+ 
+
+Link https://www.unlogged.io/post/integrati... by Deepak Vishwakarma
+Deepak Vishwakarma
+21-02 17:52
+
+
+https://www.unlogged.io/post/integrating-jwt-with-spring-security-6-in-spring-boot-3
+
+Url Preview for Integrating JWT with Spring Security 6 in Spring Boot 3
+Integrating JWT with Spring Security 6 in Spring Boot 3
+Integrate JWT with Spring Security 6 in Spring Boot 3 to enhance authentication and authorization. Follow this guide for secure token-based access.
+
+www.unlogged.io
+24 February
+Link https://us05web.zoom.us/j/87072561755?... by Deepak Vishwakarma
+Deepak Vishwakarma
+24-02 15:00
+
+
+https://us05web.zoom.us/j/87072561755?pwd=JJO4OC2COdcatMSAtbbVkS6fuk8pbY.1
+
+Url Preview for Join our Cloud HD Video Meeting
+Join our Cloud HD Video Meeting
+Zoom is the leader in modern enterprise video communications, with an easy, reliable cloud platform for video and audio conferencing, chat, and webinars across mobile, desktop, and room systems. Zo...
+
+us05web.zoom.us
+Link https://us05web.zoom.us/j/88098034904?... by Deepak Vishwakarma
+Deepak Vishwakarma
+24-02 15:41
+
+
+https://us05web.zoom.us/j/88098034904?pwd=158k93nrGHT6MWFX0EGDrRtzTdPodG.1
+
+Url Preview for Join our Cloud HD Video Meeting
+Join our Cloud HD Video Meeting
+Zoom is the leader in modern enterprise video communications, with an easy, reliable cloud platform for video and audio conferencing, chat, and webinars across mobile, desktop, and room systems. Zo...
+
+us05web.zoom.us
+image by Deepak Vishwakarma
+Deepak Vishwakarma
+24-02 17:20
+
+
+image
+
+25 February
+Link https://us05web.zoom.us/j/82235610552?... by Deepak Vishwakarma
+Deepak Vishwakarma
+25-02 11:48
+
+
+https://us05web.zoom.us/j/82235610552?pwd=fuIFvPyxBkFX5dooarN0BpPITmvP3p.1
+
+Url Preview for Join our Cloud HD Video Meeting
+Join our Cloud HD Video Meeting
+Zoom is the leader in modern enterprise video communications, with an easy, reliable cloud platform for video and audio conferencing, chat, and webinars across mobile, desktop, and room systems. Zo...
+
+us05web.zoom.us
+Link https://youtu.be/oeni_9g7too?si=y4QGJ5... by Deepak Vishwakarma
+Deepak Vishwakarma
+25-02 12:20
+
+
+https://youtu.be/oeni_9g7too?si=y4QGJ5L7mc5Wi9Gv
+
+
+YouTube
+Video poster
+Spring Security 6 with Spring Boot and JWT Tutorial
+
+Telusko
+
+242.2K views · 6 months ago
+
+
+Open
+By using YouTube, you agree to the 
+privacy policy
+, 
+terms of use
+, and 
+permissions
+.
+
+Link https://youtu.be/R76S0tfv36w?si=ift5xh... by Deepak Vishwakarma
+Deepak Vishwakarma
+25-02 12:22
+
+https://youtu.be/R76S0tfv36w?si=ift5xhcRFS6YeqRa
+
+
+YouTube
+Video poster
+Spring Boot 3.0 Security | Authentication and Authorization | [New Changes] | javaTechie
+
+Java Techie
+
+237.6K views · 2 years ago
+
+
+Open
+By using YouTube, you agree to the 
+privacy policy
+, 
+terms of use
+, and 
+permissions
+.
+
+Link https://youtu.be/bAS_WcH6NeQ?si=mQ8Xyd... by Deepak Vishwakarma
+Deepak Vishwakarma
+25-02 12:23
+
+https://youtu.be/bAS_WcH6NeQ?si=mQ8XydO3sv5C80t9
+
+
+YouTube
+Video poster
+ Spring Boot 3.0 | Configuring Spring Security in Spring Boot 3.0 | New way to configure Security
+
+Learn Code With Durgesh
+
+91.9K views · 2 years ago
+
+
+Open
+By using YouTube, you agree to the 
+privacy policy
+, 
+terms of use
+, and 
+permissions
+.
+
+Spring Security Core by Deepak Vishwakarma, has an attachment.
+Deepak Vishwakarma
+25-02 12:36
+
+
+Spring Security Core
+
+StudentSecurity.zip
+
+Link https://us05web.zoom.us/j/86299962772?... by Deepak Vishwakarma
+Deepak Vishwakarma
+25-02 18:13
+
+
+https://us05web.zoom.us/j/86299962772?pwd=DuchBmt2lEHtjlCwBXb7aUL5rYlZln.1
+
+Url Preview for Join our Cloud HD Video Meeting
+Join our Cloud HD Video Meeting
+Zoom is the leader in modern enterprise video communications, with an easy, reliable cloud platform for video and audio conferencing, chat, and webinars across mobile, desktop, and room systems. Zo...
+
+us05web.zoom.us
+26 February
+Message by Deepak Vishwakarma
+Deepak Vishwakarma
+26-02 10:55
+
+
+JwtUtils
+ 
+Text
+@Component
+public class JwtUtils {
+
+    @Value("${spring.app.jwtSecretKey}")
+    private String jwtSecretKey;
+
+    public void verifyKey() {
+        System.err.println("SECRET KEY ->>>" + jwtSecretKey);
+    }
+
+    // 1. Generates a JWT token for the given userName.
+    public String generateToken(String userName) {
+        // Prepare claims for the token
+        Map<String, Object> claims = new HashMap<>();
+
+        // Build JWT token with claims, subject, issued time, expiration time, and
+        // signing algorithm
+        // Token valid for 3 minutes
+        return Jwts.builder().claims().add(claims).subject(userName).issuedAt(new Date(System.currentTimeMillis()))
+                .expiration(new Date(System.currentTimeMillis() + 1000 * 60 * 3)).and().signWith(getSignKey())
+                .compact();
+    }
+
+    // 2. Creates a signing key from the base64 encoded secret.
+    // returns a Key object for signing the JWT.
+    private SecretKey getSignKey() {
+        // Decode the base64 encoded secret key and return a Key object
+        byte[] keyBytes = Decoders.BASE64.decode(jwtSecretKey);
+        return Keys.hmacShaKeyFor(keyBytes);
+    }
+
+    // 3. Extracts the userName from the JWT token.
+    // return -> The userName contained in the token.
+    public String extractUserName(String token) {
+        // Extract and return the subject claim from the token
+        return extractClaim(token, Claims::getSubject);
+    }
+
+    // 4. Extracts the expiration date from the JWT token.
+    // @return The expiration date of the token.
+    public Date extractExpiration(String token) {
+        // Extract and return the expiration claim from the token
+        return extractClaim(token, Claims::getExpiration);
+    }
+
+    // 5. Extracts a specific claim from the JWT token.
+    // claimResolver A function to extract the claim.
+    // return-> The value of the specified claim.
+    private <T> T extractClaim(String token, Function<Claims, T> claimResolver) {
+        // Extract the specified claim using the provided function
+        final Claims claims = extractAllClaims(token);
+        return claimResolver.apply(claims);
+    }
+
+    // 6. Extracts all claims from the JWT token.
+    // return-> Claims object containing all claims.
+    private Claims extractAllClaims(String token) {
+        // Parse and return all claims from the token
+        return Jwts.parser().verifyWith(getSignKey()).build().parseSignedClaims(token).getPayload();
+    }
+
+    // 7. Checks if the JWT token is expired.
+    // return-> True if the token is expired, false otherwise.
+    public Boolean isTokenExpired(String token) {
+        // Check if the token's expiration time is before the current time
+        return extractExpiration(token).before(new Date());
+    }
+
+    // 8. Validates the JWT token against the UserDetails.
+    // return-> True if the token is valid, false otherwise.
+    public Boolean validateToken(String token, UserDetails userDetails) {
+        // Extract username from token and check if it matches UserDetails' username
+        final String userName = extractUserName(token);
+        // Also check if the token is expired
+        return (userName.equals(userDetails.getUsername()) && !isTokenExpired(token));
+    }
+  }
+
+Link https://us05web.zoom.us/j/84818188850?... by Deepak Vishwakarma
+Deepak Vishwakarma
+26-02 18:12
+
+
+https://us05web.zoom.us/j/84818188850?pwd=VQ1J38MjjugDVwNHxFAhebXDW04a98.1
+
+Url Preview for Join our Cloud HD Video Meeting
+Join our Cloud HD Video Meeting
+Zoom is the leader in modern enterprise video communications, with an easy, reliable cloud platform for video and audio conferencing, chat, and webinars across mobile, desktop, and room systems. Zo...
+
+us05web.zoom.us
+27 February
+         // 01 - AuthenticationManager is ... by Deepak Vishwakarma
+Deepak Vishwakarma
+27-02 13:08
+Edited
+
+
+ 
+
+Java
+
+
+        // 01 - AuthenticationManager is used to authenticate the user
+        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
+                loginDto.getUsername(),
+                loginDto.getPassword()
+        ));
+
+        /* 02 - SecurityContextHolder is used to allows the rest of the application to know
+        that the user is authenticated and can use user data from Authentication object */
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+
+        // 03 - Generate the token based on username and secret key
+        String token = jwtTokenProvider.generateToken(authentication);
+
+        // 04 - Return the token to controller
+        return token;
+01 March
+01-03 10:57
+ 
+Deepak Vishwakarma started a meeting.
+Kush Khatri started recording to the cloud
+01-03 10:59 Kush Khatri started recording to the cloud
+Aryan Madhu stopped recording.
+01-03 12:54 Aryan Madhu stopped recording.
+Meeting ended at 01-03 14:03 after 3 hours 6 minutes 31 seconds
+01-03 14:03 Meeting ended 3h 6m 31s
+Java Training 2025
+01 March 2025 10:59 - 12:54
+
+View recap
+Content
+
+Exception Handling in Java.pdf
+
+
+1h 55m 43s
+Expires in 110 days
+01-03 14:12
+ 
+Deepak Vishwakarma started a meeting.
+Aryan Madhu started recording to the cloud
+01-03 14:14 Aryan Madhu started recording to the cloud
+Aryan Madhu stopped recording.
+01-03 15:35 Aryan Madhu stopped recording.
+Aryan Madhu started recording to the cloud
+01-03 16:02 Aryan Madhu started recording to the cloud
+Aryan Madhu stopped recording.
+01-03 17:07 Aryan Madhu stopped recording.
+Anshul Patel started recording to the cloud
+01-03 17:33 Anshul Patel started recording to the cloud
+Kush Khatri stopped recording.
+01-03 18:57 Kush Khatri stopped recording.
+Meeting ended at 01-03 18:57 after 4 hours 44 minutes 49 seconds This meeting contains recordings
+01-03 18:57 Meeting ended 4h 44m 49s
+Java Training 2025
+01 March 2025 14:14 - 15:35
+
+View recap
+Content
+
+Transcript
+
+Exception Handling in Java.pdf
+
+
+3 recordings
+Set to expire
+03 March
+  Microservice Based Project -> Create two ... by Deepak Vishwakarma
+Deepak Vishwakarma
+03-03 10:35
+
+
+ 
+
+Java
+
+
+
+Microservice Based Project
+
+-> Create two services with Following descriptions
+
+1. service-contact-management
+ a.POST: Add Contact Details 
+  RequestObject-(id, name, mobileNo,landLineNo,address,pincode)
+  ResponseObject- (name, mobileNo,LandLineNo,statusMessage, StatusCode)
+ b.GET: getContactByName 
+  List<ResponseObject>-(id, name, mobileNo,landLineNo,address,pincode)
+ c.GET: getAllConacts
+  List<ResponseObject>-(id, name, mobileNo,landLineNo,address,pincode)
+ d.POST: deleteContactById
+ e.POST: updateContactById
+ 
+2. service-user
+ a.GET: FindContactByName
+  List<ResponseObject>-(id, name, mobileNo,landLineNo,address,pincode)
+ b.GET: FindAllContacts
+  List<ResponseObject>-(id, name, mobileNo,landLineNo,address,pincode)
+Project Name: Telephone-Directory   by Deepak Vishwakarma
+Deepak Vishwakarma
+03-03 10:37
+
+Project Name: Telephone-Directory
+
+ 
+
+bg.getDonerDetails().add(new chaid object) by Ridham Patel
+Ridham Patel
+03-03 19:24
+
+
+bg.getDonerDetails().add(new chaid object)
+
+04 March
+  Call GET Method Using RestTemplate 1. get... by Deepak Vishwakarma
+Deepak Vishwakarma
+04-03 12:28
+
+
+ 
+
+Java
+
+
+Call GET Method Using RestTemplate
+
+1. getForObject  (When we want only responseBody)
+
+ a. getForObject(String url, Class<T> responseType)
+ b. getForObject(String url, Class<T> responseType, Map<String, ?> uriVariables)
+ c. getForObject(String url, Class<T> responseType, Object... uriVariables)
+
+2. getForEntity (When we want responseBody, responseHeader and Status)
+
+ a. getForEntity(URI url, Class<T> responseType)
+ b. getForEntity(String url, Class<T> responseType, Map<String, ?> uriVariables)
+ c. getForEntity(String url, Class<T> responseType, Object... uriVariables)
+
+3. exchange (When we want to customize Headers, Get ResponseHeaders, Response Body, HttpStatus)
+
+ a. exchange(URI url, HttpMethod method, @Nullable HttpEntity<?> requestEntity, Class<T> responseType)
+ 
+ b. exchange(String url, HttpMethod method,
+   @Nullable HttpEntity<?> requestEntity, Class<T> responseType, Map<String, ?> uriVariables)
+ 
+ c. exchange(String url, HttpMethod method,
+   @Nullable HttpEntity<?> requestEntity, Class<T> responseType, Object... uriVariables)
+ 
+  String jwtToken= "jwtToken" ;  HttpHeade... by Deepak Vishwakarma
+Deepak Vishwakarma
+04-03 12:28
+
+ 
+
+Java
+
+
+String jwtToken="jwtToken";
+  HttpHeaders httpHeaders=new HttpHeaders();
+  httpHeaders.set("Authorization", jwtToken);
+  
+  HttpEntity<?> httpEntity=new HttpEntity<>(httpHeaders);
+  
+  ResponseEntity<ContactProxy> resp = restTemplate.exchange(baseUrl + "/getContactById/{id}", HttpMethod.GET,
+    httpEntity, ContactProxy.class, id);
+Thursday
+Why Context path is Not Working with Spring... by Deepak Vishwakarma
+Deepak Vishwakarma
+Thursday 14:18
+
+
+Why Context path is Not Working with Spring Cloud Gateway?
+
+Spring Cloud Gateway does not rely on Spring MVC's context-path. Instead, Gateway directly uses Netty Server (Reactor) under the hood, which doesn't inherit the server-servlet-context-path property.
+
+Friday
+    ng new name_of_project  (standalone) ... by Deepak Vishwakarma
+Deepak Vishwakarma
+Friday 14:05
+
+
+    ng new name_of_project  (standalone)
+    ng new name_of_project --no-standalone
+
+Saturday
+Saturday 10:51
+ 
+Kush Khatri started a meeting.
+Aryan Madhu started recording to the cloud
+Saturday 10:55 Aryan Madhu started recording to the cloud
+<input type="button" value="Disable me" dis... by Aryan Madhu
+Aryan Madhu
+Saturday 11:31
+
+
+<input type="button" value="Disable me" disabled />
+Kush Khatri stopped recording.
+Saturday 12:32 Kush Khatri stopped recording.
+Meeting ended at Saturday 12:33 after 1 hour 41 minutes 55 seconds This meeting contains recordings
+Saturday 12:33 Meeting ended 1h 41m 55s
+Java Training 2025
+08 March 2025 10:55 - 12:32
+
+View recap
+Content
+
+Transcript
+
+Exception Handling in Java.pdf
+
+
+1h 36m 24s
+Expires in 117 days
+# Data Binding   - Technique where data s... by Deepak Vishwakarma
+Deepak Vishwakarma
+Saturday 12:35
+Edited
+
+
+# Data Binding
+
+  - Technique where data stays in sync between the component(ts) and the view (html).
+  - Whenever the use updates the data in the view, Angular updates the component and   vice versa
+  - Example - change element style, respond to user event etc.
+
+
+# There are two way to perform data binding in Angular
+  a. One way binding
+  b. Two way binding
+
+# One way Binding - From Component to View : ts -> html
+
+  a. Interpolation
+  b. Property binding {ex- [innerText],[disabled]}
+
+* class Binding (Bind css class property dynamically)
+  a. Using the DOM 'className' {[className]}
+  b. Using the 'class' {[class]}
+  c. Using the 'NgClass' directive
+    1. NgClass with String {[ngClass]="'mycolor,...'"}
+    2. NgClass with Object {[ngClass]="{'mycolor':true,'':condition}"}
+
+
+# Onw way Binding - From view to Component : html -> ts
+
+  a. Event Binding- Events can be user action such as clicking a mouse button etc.
+
+  Syntax: (target-event) = "Template Statement"
+<button (click)="onSave()" > Save </button>
+  Events: mouseOver, MouseOut, keyDown, keypress etc.
+
+
+# Template Reference Variable (GET TextBox Value in Angular)
+
+  - <input type="text" #fname>
+  - <button (click)="saveFormData(fname.value)">Save</button>
+
+  * The Template reference variable is a reference to any DOM element, Component or a Directive in the template
+
+
+# Two way Binding 
+  - Two way binding useful in data entry forms etc.
+
+  a. ngModel - Angular uses 'ngModel' directive to achieve the two way binding on html form elements 
+
+  [Angular directives are classes that enhance the feature of a HTML element or component and add additional behavior to the web application. They can transform a static HTML page into dynamic by manipulating DOM. They begin with ng, which stands for Angular]
+
+  - It binds to a form elements like - input, select etc.
+  Syntax: (banana in a box: [()])
+  [(ngModel)]="model.name"
+
+  TwoWayBinding = PropertyBinding[] + Event Binding()
+
+  Note- ngModel directive is not a part of the Angular core library. It is part of the
+      @angular/forms. We need to import the formModule package into Angular Module
+
+  - Internally it uses the ngModel in property binding to bind the value property and ngModelChange which binds to the input event.
+
+
+
+
+
+Saturday 15:51
+ 
+Riya Rami started a meeting.
+Aryan Madhu started recording to the cloud
+Saturday 15:52 Aryan Madhu started recording to the cloud
+Kush Khatri stopped recording.
+Saturday 16:41 Kush Khatri stopped recording.
+Kush Khatri started recording to the cloud
+Saturday 16:42 Kush Khatri started recording to the cloud
+Kush Khatri stopped recording.
+Saturday 16:48 Kush Khatri stopped recording.
+Meeting ended at Saturday 16:50 after 58 minutes 57 seconds This meeting contains recordings
+Saturday 16:50 Meeting ended 58m 57s
+Java Training 2025
+08 March 2025 15:52 - 16:41
+
+View recap
+Content
+
+Transcript
+
+Exception Handling in Java.pdf
+
+
+2 recordings
+Set to expire
+Yesterday
+Message by Deepak Vishwakarma
+Deepak Vishwakarma
+Yesterday 11:24
+
+
+Text
+Structural Directives in Angular 
+
+-> Structural directives are responsible for the structure and layout of the DOM element. It is used to hide or display the elements in the DOM
+
+    a. ngIf
+    b. ngIf --else
+    c. ngSwitch
+    d. ngFor
+
+
+
+
+-> ngIf structural Directive(*ngIf)
+
+    a. ngIf directive is used to display or hide the DOM element based on the expression value assigned to it. The expression must return a Boolean Value.
+
+    b. ngIf directive doesnot hide the DOM element. It removes the entire element along with its subtree from the DOM
+
+->ngIf --else Structural Directive
+
+    a. ngIf--else works like a simple if else statement wherein if the condition is true then if DOM element is rendered, else the other DOM element is rendered.
+
+    b. Angular uses ng-template with element selector (Template reference variable) in order to display the else section in DOM.
+
+-> ngSwitch Structural Directive
+
+    a. The ngSwitch directive is applied to the container element with a switch expression. Container elements are div, header, footer etc.
+
+    b.In angular ngSwitchCase directive , the inner elements are placed inside the container element.
+
+    c. ngSwitchDefault
+
+Link https://angular.dev/guide/templates/pi... by Deepak Vishwakarma
+Deepak Vishwakarma
+Yesterday 18:24
+
+
+https://angular.dev/guide/templates/pipes
+
+Url Preview for Angular
+Angular
+The web development framework for building modern apps.
+
+angular.dev
+Today
+12:29
+ 
+Krishna Sharma started a meeting.
+Meeting ended at 12:29 after 3 seconds
+12:29 Meeting ended 3s
+has context menu
+
+
+
+
+
