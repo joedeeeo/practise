@@ -1,0 +1,3655 @@
+{
+	"info": {
+		"_postman_id": "ad851d80-7810-4ea6-bc0f-fc7b55186b48",
+		"name": "ProStaff",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28337066"
+	},
+	"item": [
+		{
+			"name": "Service-Organization (used by other services)",
+			"item": [
+				{
+					"name": "Is Organization Exist",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5590/organization/is-organization-exist/OPL",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5590",
+							"path": [
+								"organization",
+								"is-organization-exist",
+								"OPL"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Help Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDM0NDAwNjMsImV4cCI6MTc0MzQ0MDk2M30.VskEdXno_pA4pxEVMJjnzE75Fscdb_hXfE0E9DHEkCM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "updatedHelpDetails",
+									"value": "{\n    \"email\" : \"help@oplinnovate.com\",\n\t\"phoneNumber\": \"+91 1234567898\"\n}",
+									"contentType": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "wrapper",
+									"value": "{\"adminEmail\": \"nishit.chaudhary@opl.com\"}",
+									"contentType": "application/json",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5555/organization/update-help-details",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"organization",
+								"update-help-details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Upcoming Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDM0NDAwNjMsImV4cCI6MTc0MzQ0MDk2M30.VskEdXno_pA4pxEVMJjnzE75Fscdb_hXfE0E9DHEkCM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "wrapper",
+									"value": "{\"adminEmail\": \"nishit.chaudhary@opl.com\"}",
+									"contentType": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "newUpcomingEvent",
+									"value": "{\n    \"name\": \"123\",\n\t\"description\": \"At Hyaat ahmedabad\",\n\t\"date\": \"12-12-2025\"\n}",
+									"contentType": "application/json",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5555/organization/add-upcoming-event",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"organization",
+								"add-upcoming-event"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Upcoming Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDM0NDAwNjMsImV4cCI6MTc0MzQ0MDk2M30.VskEdXno_pA4pxEVMJjnzE75Fscdb_hXfE0E9DHEkCM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adminEmail\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/organization/remove-upcoming-event/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"organization",
+								"remove-upcoming-event",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Upcoming Events",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDM0NDAwNjMsImV4cCI6MTc0MzQ0MDk2M30.VskEdXno_pA4pxEVMJjnzE75Fscdb_hXfE0E9DHEkCM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/organization/get-upcoming-events",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"organization",
+								"get-upcoming-events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Help Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDM0NDAwNjMsImV4cCI6MTc0MzQ0MDk2M30.VskEdXno_pA4pxEVMJjnzE75Fscdb_hXfE0E9DHEkCM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/organization/get-help-details",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"organization",
+								"get-help-details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get FAQ's",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDM0NDAwNjMsImV4cCI6MTc0MzQ0MDk2M30.VskEdXno_pA4pxEVMJjnzE75Fscdb_hXfE0E9DHEkCM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/organization/get-faqs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"organization",
+								"get-faqs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add FAQ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDM0NDAwNjMsImV4cCI6MTc0MzQ0MDk2M30.VskEdXno_pA4pxEVMJjnzE75Fscdb_hXfE0E9DHEkCM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "wrapper",
+									"value": "{\"adminEmail\": \"nishit.chaudhary@opl.com\"}",
+									"contentType": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "newFAQ",
+									"value": "{\n    \"question\": \"what is prostaff\",\n    \"answer\": \"EMS\"\n}",
+									"contentType": "application/json",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5555/organization/add-faq",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"organization",
+								"add-faq"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove FAQ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDM0NDAwNjMsImV4cCI6MTc0MzQ0MDk2M30.VskEdXno_pA4pxEVMJjnzE75Fscdb_hXfE0E9DHEkCM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adminEmail\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/organization/remove-faq/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"organization",
+								"remove-faq",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Organization Data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDM0NDAwNjMsImV4cCI6MTc0MzQ0MDk2M30.VskEdXno_pA4pxEVMJjnzE75Fscdb_hXfE0E9DHEkCM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/organization/get-organization-data",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"organization",
+								"get-organization-data"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Department",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5590/organization/add-department/OPL/Cloud AWS",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5590",
+							"path": [
+								"organization",
+								"add-department",
+								"OPL",
+								"Cloud AWS"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Departments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5590/organization/get-departments/google",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5590",
+							"path": [
+								"organization",
+								"get-departments",
+								"google"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Department",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5590/organization/remove-department/opl/IT",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5590",
+							"path": [
+								"organization",
+								"remove-department",
+								"opl",
+								"IT"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Designation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDM0NDAwNjMsImV4cCI6MTc0MzQ0MDk2M30.VskEdXno_pA4pxEVMJjnzE75Fscdb_hXfE0E9DHEkCM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5555/organization/add-designation/google/VP",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"organization",
+								"add-designation",
+								"google",
+								"VP"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Designations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5590/organization/get-designations/Opl",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5590",
+							"path": [
+								"organization",
+								"get-designations",
+								"Opl"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Designation",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5590/organization/remove-designation/opl/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5590",
+							"path": [
+								"organization",
+								"remove-designation",
+								"opl",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Team",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5590/organization/add-team/google/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5590",
+							"path": [
+								"organization",
+								"add-team",
+								"google",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Teams",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5590/organization/get-teams/google",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5590",
+							"path": [
+								"organization",
+								"get-teams",
+								"google"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Team",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5590/organization/remove-team/google/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5590",
+							"path": [
+								"organization",
+								"remove-team",
+								"google",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Employee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5590/organization/add-employee/Opl",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5590",
+							"path": [
+								"organization",
+								"add-employee",
+								"Opl"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Employee",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"nishit@google.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5590/organization/remove-employee/opl",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5590",
+							"path": [
+								"organization",
+								"remove-employee",
+								"opl"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Employees",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5590/organization/get-employees/Opl",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5590",
+							"path": [
+								"organization",
+								"get-employees",
+								"Opl"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Admin Logs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5590/organization/get-admin-logs/Opl",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5590",
+							"path": [
+								"organization",
+								"get-admin-logs",
+								"Opl"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Admin Log",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5590/organization/add-admin-log/opl/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5590",
+							"path": [
+								"organization",
+								"add-admin-log",
+								"opl",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Admin Log",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5590/organization/remove-admin-log/opl/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5590",
+							"path": [
+								"organization",
+								"remove-admin-log",
+								"opl",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Notifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5590/organization/get-notifications/opl",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5590",
+							"path": [
+								"organization",
+								"get-notifications",
+								"opl"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Notification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5590/organization/add-notification/google/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5590",
+							"path": [
+								"organization",
+								"add-notification",
+								"google",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Notification",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5590/organization/remove-notification/google/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5590",
+							"path": [
+								"organization",
+								"remove-notification",
+								"google",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update Upcoming Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDM0NDAwNjMsImV4cCI6MTc0MzQ0MDk2M30.VskEdXno_pA4pxEVMJjnzE75Fscdb_hXfE0E9DHEkCM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "wrapper",
+									"value": "{\"adminEmail\": \"nishit.chaudhary@opl.com\"}",
+									"contentType": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "updatedUpcomingEvent",
+									"value": "{\"id\": 1, \"name\": \"Seminar\", \"date\": \"2025-02-03\", \"description\": \"pansul\"}",
+									"contentType": "application/json",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5555/organization/update-upcoming-event",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"organization",
+								"update-upcoming-event"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update FAQ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDM0NDAwNjMsImV4cCI6MTc0MzQ0MDk2M30.VskEdXno_pA4pxEVMJjnzE75Fscdb_hXfE0E9DHEkCM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "wrapper",
+									"value": "{\"adminEmail\": \"nishit.chaudhary@opl.com\"}",
+									"contentType": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "updatedFAQ",
+									"value": "{\"id\": 1, \"question\": \"what is aryan\", \"answer\": \"madhulal\"}",
+									"contentType": "application/json",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5555/organization/update-faq",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"organization",
+								"update-faq"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dont use it just for testing",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "organizationImage",
+									"type": "file",
+									"src": "postman-cloud:///1f00d3b5-1e02-4140-b391-2b7bc68166a5"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5590/organization/register-organization/Opl",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5590",
+							"path": [
+								"organization",
+								"register-organization",
+								"Opl"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Service-Auth (only /login should be used directly))",
+			"item": [
+				{
+					"name": "Add User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"nishit.chaudhary@opl.com\",\r\n    \"password\": \"$2a$12$uHZOZIZcGyVp12PHETl2ZuoVvaVT1WM9wcQz.4fgnlqUDHPe5GVcG\",\r\n    \"organizationName\": \"Opl\",\r\n    \"fullName\": \"Nishit Chaudhary\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5580/auth/add-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5580",
+							"path": [
+								"auth",
+								"add-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"nishitchaudhary@gmail.com\",\r\n    \"password\": \"$2a$12$7kMmLyFD7KRZIw88wK7EZ.sBjLjGk/4R9z8kXitS8qmrQ.FrvIZhe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"nishit.chaudhary@oplinnovate.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5580/auth/delete-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5580",
+							"path": [
+								"auth",
+								"delete-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Is User Exist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5580/auth/is-user-exist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5580",
+							"path": [
+								"auth",
+								"is-user-exist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validate Request (Gateway)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jwtToken\": \"\",\r\n    \"path\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5580/auth/validate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5580",
+							"path": [
+								"auth",
+								"validate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Organization",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"john.moe@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5580/auth/get-user-organization",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5580",
+							"path": [
+								"auth",
+								"get-user-organization"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Full Name",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"nishit.chaudhary@oplinnovate.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5580/auth/get-user-fullname",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5580",
+							"path": [
+								"auth",
+								"get-user-fullname"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send pass reset mail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"nishitchaudhary71@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/auth/send-reset-password-mail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"auth",
+								"send-reset-password-mail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Req Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\": \"70d831f0-0f72-4a2a-87d3-bad68d40161a\",\r\n    \"newPassword\": \"nishit12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/auth/request-reset-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"auth",
+								"request-reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Order (Razorpay)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5555/auth/create-order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"auth",
+								"create-order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Payment (Razorpay) & Register New Organization",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "details",
+									"value": "{\n    \"razorpay_order_id\": \"\",\n    \"razorpay_payment_id\": \"\",\n    \"razorpay_signature\": \"\",\n    \"organizationName\": \"OPL\",\n    \"adminFullName\": \"Nishit Chaudhary\",\n    \"adminEmail\": \"nishitchaudhary71@gmail.com\"\n}",
+									"contentType": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "orgImage",
+									"type": "file",
+									"src": "postman-cloud:///1f00d3b5-1e02-4140-b391-2b7bc68166a5"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5555/auth/verify-payment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"auth",
+								"verify-payment"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Service-Admin-Logger",
+			"item": [
+				{
+					"name": "Get All Logs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMjE0MjEsImV4cCI6MTc0MzMyMjMyMX0.PLOrMqGLg51sx88DnQ8YUF3hFNlPt5kas7Th0C_-ccs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adminEmail\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/admin-logs/get-all-logs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"admin-logs",
+								"get-all-logs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Specific Logs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMTg1NTQsImV4cCI6MTc0MzMxOTQ1NH0.1eGEoSttG0Mt7sW6f7x2MkwNzNcajwcyErDQNQAnqIw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adminEmail\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/admin-logs/get-all-specific-logs/EMPLOYEE_ADDED",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"admin-logs",
+								"get-all-specific-logs",
+								"EMPLOYEE_ADDED"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Log (used by other services)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMyNjk5MTIsImV4cCI6MTc0MzI3MDgxMn0.OCOtrMpz2emSJZIvKZsI4ewpjZzRsHCdoiggsOYrtSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"EMPLOYEE_ADDED\",\r\n    \"adminEmail\": \"nishit.chaudhary@oplinnovate.com\",\r\n    \"message\": \"Pansul added to opl, good luck\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/admin-logs/add-log",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"admin-logs",
+								"add-log"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Service-Employee",
+			"item": [
+				{
+					"name": "Add Employee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDM0NDA0OTksImV4cCI6MTc0MzQ0MTM5OX0.eG7avANbpyteCU87-IRFWJKqLW0ZyMJVl62S2pBY7XY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "profileImage",
+									"type": "file",
+									"src": "postman-cloud:///1f00d3b5-1e02-4140-b391-2b7bc68166a5"
+								},
+								{
+									"key": "employeeRegistrationDetail",
+									"value": "{\n  \"email\": \"nishitchaudhary@gmail.com\",\n  \"fullName\": \"Nishit Chaudhary\",\n  \"adminEmail\": \"nishit.chaudhary@opl.com\",\n  \"gender\": \"MALE\",\n  \"skills\": [\"Java\", \"Angular\", \"Spring Boot\"],\n  \"reportingManager\": \"Jane Smith\",\n  \"phoneNumber\": \"+1234567890\",\n  \"address\": \"123 Main Street, City, Country\",\n  \"dob\": \"1990-05-15T00:00:00.000Z\",\n  \"joiningDate\": \"2023-01-10T00:00:00.000Z\",\n  \"emergencyContact\": \"+9876543210\",\n  \"bankDetail\": {\n    \"accountNumber\": \"123456789012\",\n    \"bankName\": \"XYZ Bank\",\n    \"ifscCode\": \"XYZB0001234\",\n    \"branch\": \"Main Branch\"\n  },\n  \"department\": 1,\n  \"designation\": 1,\n  \"teams\": []\n}\n",
+									"contentType": "application/json",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5555/employee/add-employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"employee",
+								"add-employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get employee basic information",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMTg1NTQsImV4cCI6MTc0MzMxOTQ1NH0.1eGEoSttG0Mt7sW6f7x2MkwNzNcajwcyErDQNQAnqIw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\"nishit.chaudhary@opl.com\", \"john.doe@example.com\", \"john.moe@example.com\"]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/employee/get-employees-basic-information",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"employee",
+								"get-employees-basic-information"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Employee All Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMTg1NTQsImV4cCI6MTc0MzMxOTQ1NH0.1eGEoSttG0Mt7sW6f7x2MkwNzNcajwcyErDQNQAnqIw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"john.moe@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/employee/get-employee-information",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"employee",
+								"get-employee-information"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile Image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMyNjk5MTIsImV4cCI6MTc0MzI3MDgxMn0.OCOtrMpz2emSJZIvKZsI4ewpjZzRsHCdoiggsOYrtSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "newImage",
+									"type": "file",
+									"src": "postman-cloud:///1eff5bf6-3a01-4950-8c78-cc606636778c"
+								},
+								{
+									"key": "employeeEmailWrapper",
+									"value": "{\"employeeEmail\": \"john.doe@example.com\"}",
+									"contentType": "application/json",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5555/employee/update-employee-profile-image",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"employee",
+								"update-employee-profile-image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Employee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMyNjk5MTIsImV4cCI6MTc0MzI3MDgxMn0.OCOtrMpz2emSJZIvKZsI4ewpjZzRsHCdoiggsOYrtSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"john.doe@example.com\",\r\n    \"adminEmail\": \"nishit.chaudhary@opl.com\",\r\n    \"gender\": \"MALE\",\r\n    \"skills\": [\r\n        \"Java\",\r\n        \"Spring Boot\"\r\n    ],\r\n    \"reportingManager\": \"Vikram\",\r\n    \"phoneNumber\": \"+1-234-567-8901\",\r\n    \"address\": \"123 Main St, New York, NY 10001\",\r\n    \"dob\": \"1990-05-15\",\r\n    \"joiningDate\": \"2022-07-01\",\r\n    \"emergencyContact\": \"+1-987-654-3210\",\r\n    \"bankDetail\": {\r\n        \"accountNumber\": \"123456789012\",\r\n        \"bankName\": \"Bank of Africa\",\r\n        \"ifscCode\": \"BOFAUS3N\",\r\n        \"branch\": \"New York Main Branch\"\r\n    },\r\n    \"rating\": {\r\n        \"punctuality\": 3,\r\n        \"performance\": 4,\r\n        \"softSkills\": 3,\r\n        \"creativity\": 4\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/employee/update-employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"employee",
+								"update-employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Employee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMjYyOTEsImV4cCI6MTc0MzMyNzE5MX0.NZmoMTOmOgQJiSOCnzfFtA7h8l12AE6MALQwrCulVnA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"john.moe@example.com\",\r\n    \"adminEmail\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/employee/delete-employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"employee",
+								"delete-employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get org employees",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMjU2NjcsImV4cCI6MTc0MzMyNjU2N30.sMJWtyUO0luAI3wFbv8keuB8fQtgjpkCMkQKx1AXZCc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adminEmail\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/employee/get-all-organization-employees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"employee",
+								"get-all-organization-employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Is Emp Exist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMyNjk5MTIsImV4cCI6MTc0MzI3MDgxMn0.OCOtrMpz2emSJZIvKZsI4ewpjZzRsHCdoiggsOYrtSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"john.doe@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/employee/is-employee-exist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"employee",
+								"is-employee-exist"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Service-Team",
+			"item": [
+				{
+					"name": "Get All Team Names",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMTk4MTAsImV4cCI6MTc0MzMyMDcxMH0.SX6gYHX4f4BawTF3moj8dAjIygiJD4gYjp2G6fEgTx0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adminEmail\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/team/get-all-team-names",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"team",
+								"get-all-team-names"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Emp Teams",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMTk1MzksImV4cCI6MTc0MzMyMDQzOX0.L_b8I9Mz3wiN-ieZeAG80txeOY_2v3RkU31FQHtOfZM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"john.doe@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/team/get-employee-teams",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"team",
+								"get-employee-teams"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Employee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMTk4MTAsImV4cCI6MTc0MzMyMDcxMH0.SX6gYHX4f4BawTF3moj8dAjIygiJD4gYjp2G6fEgTx0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5555/team/get-all-employees/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"team",
+								"get-all-employees",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Teams",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMTk4MTAsImV4cCI6MTc0MzMyMDcxMH0.SX6gYHX4f4BawTF3moj8dAjIygiJD4gYjp2G6fEgTx0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adminEmail\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/team/get-all-teams",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"team",
+								"get-all-teams"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Team Employee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMTg1NTQsImV4cCI6MTc0MzMxOTQ1NH0.1eGEoSttG0Mt7sW6f7x2MkwNzNcajwcyErDQNQAnqIw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\"john.doe@example.com\"]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/team/update-employees/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"team",
+								"update-employees",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Teams of Emp",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMTk1MzksImV4cCI6MTc0MzMyMDQzOX0.L_b8I9Mz3wiN-ieZeAG80txeOY_2v3RkU31FQHtOfZM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adminEmail\": \"nishit.chaudhary@opl.com\",\r\n    \"employeeEmail\": \"john.moe@example.com\",\r\n    \"teams\": [2]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/team/update-current-employee-teams",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"team",
+								"update-current-employee-teams"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Team",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMyNjk5MTIsImV4cCI6MTc0MzI3MDgxMn0.OCOtrMpz2emSJZIvKZsI4ewpjZzRsHCdoiggsOYrtSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"GST\",\r\n    \"description\": \"abt\",\r\n    \"adminEmail\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/team/add-team",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"team",
+								"add-team"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Team",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMTk1MzksImV4cCI6MTc0MzMyMDQzOX0.L_b8I9Mz3wiN-ieZeAG80txeOY_2v3RkU31FQHtOfZM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adminEmail\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/team/delete-team/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"team",
+								"delete-team",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Del Empl from all teams (used by service-employee)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMyNjk5MTIsImV4cCI6MTc0MzI3MDgxMn0.OCOtrMpz2emSJZIvKZsI4ewpjZzRsHCdoiggsOYrtSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"john.doe@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/team/delete-employee-from-all-teams",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"team",
+								"delete-employee-from-all-teams"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add emp to team (used by service-emp)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMyNjk5MTIsImV4cCI6MTc0MzI3MDgxMn0.OCOtrMpz2emSJZIvKZsI4ewpjZzRsHCdoiggsOYrtSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"john.doe@example.org\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/team/add-employee-to-team/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"team",
+								"add-employee-to-team",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Service-Department",
+			"item": [
+				{
+					"name": "Get All Department Names",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMyNjk5MTIsImV4cCI6MTc0MzI3MDgxMn0.OCOtrMpz2emSJZIvKZsI4ewpjZzRsHCdoiggsOYrtSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adminEmail\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/department/get-all-department-names",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"department",
+								"get-all-department-names"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Employee Department",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMyNjk5MTIsImV4cCI6MTc0MzI3MDgxMn0.OCOtrMpz2emSJZIvKZsI4ewpjZzRsHCdoiggsOYrtSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"john.doe@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/department/get-employee-department",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"department",
+								"get-employee-department"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Department",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDM0NDA0OTksImV4cCI6MTc0MzQ0MTM5OX0.eG7avANbpyteCU87-IRFWJKqLW0ZyMJVl62S2pBY7XY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"HR\",\r\n    \"description\": \"about hr\",\r\n    \"adminEmail\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/department/add-department",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"department",
+								"add-department"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Employee",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMjYyOTEsImV4cCI6MTc0MzMyNzE5MX0.NZmoMTOmOgQJiSOCnzfFtA7h8l12AE6MALQwrCulVnA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adminEmployee\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/department/get-all-employees/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"department",
+								"get-all-employees",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Department",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMyNjk5MTIsImV4cCI6MTc0MzI3MDgxMn0.OCOtrMpz2emSJZIvKZsI4ewpjZzRsHCdoiggsOYrtSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adminEmail\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/department/get-all-departments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"department",
+								"get-all-departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update employees in department (DANGER)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMjQ1MzcsImV4cCI6MTc0MzMyNTQzN30.B3DznY4LeG3jrjUE043jOOOSiv3ikZIb8a0HdahBL6c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\"john.moe@example.com\"]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/department/update-employees/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"department",
+								"update-employees",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change employee department",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMyNjk5MTIsImV4cCI6MTc0MzI3MDgxMn0.OCOtrMpz2emSJZIvKZsI4ewpjZzRsHCdoiggsOYrtSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/department/update-current-department/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"department",
+								"update-current-department",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Department",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMyNjk5MTIsImV4cCI6MTc0MzI3MDgxMn0.OCOtrMpz2emSJZIvKZsI4ewpjZzRsHCdoiggsOYrtSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adminEmail\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/department/delete-department/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"department",
+								"delete-department",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Del Employee (Used by employee service)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMyNjk5MTIsImV4cCI6MTc0MzI3MDgxMn0.OCOtrMpz2emSJZIvKZsI4ewpjZzRsHCdoiggsOYrtSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"john.doe@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/department/delete-employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"department",
+								"delete-employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add employee to dept (used by employee service)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMyNjk5MTIsImV4cCI6MTc0MzI3MDgxMn0.OCOtrMpz2emSJZIvKZsI4ewpjZzRsHCdoiggsOYrtSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"john.doe@example.org\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/department/add-employee-to-department/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"department",
+								"add-employee-to-department",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Service-Designation",
+			"item": [
+				{
+					"name": "Get All Designation Names",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMTk4MTAsImV4cCI6MTc0MzMyMDcxMH0.SX6gYHX4f4BawTF3moj8dAjIygiJD4gYjp2G6fEgTx0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adminEmail\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/designation/get-all-designation-names",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"designation",
+								"get-all-designation-names"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Employee Designation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMyNjk5MTIsImV4cCI6MTc0MzI3MDgxMn0.OCOtrMpz2emSJZIvKZsI4ewpjZzRsHCdoiggsOYrtSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"john.doe@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/designation/get-employee-designation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"designation",
+								"get-employee-designation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Designation Employees",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMjA4NzEsImV4cCI6MTc0MzMyMTc3MX0.w5Pqx8h0XD_suVCX6-qdHNZT36Sva2-mLqbuwzKWzmg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adminEmployee\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/designation/get-all-employees/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"designation",
+								"get-all-employees",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Designations",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMTk4MTAsImV4cCI6MTc0MzMyMDcxMH0.SX6gYHX4f4BawTF3moj8dAjIygiJD4gYjp2G6fEgTx0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adminEmail\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/designation/get-all-designations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"designation",
+								"get-all-designations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Designation Employees (DANGER)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMjQ1MzcsImV4cCI6MTc0MzMyNTQzN30.B3DznY4LeG3jrjUE043jOOOSiv3ikZIb8a0HdahBL6c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\"john.moe@example.com\"]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/designation/update-employees/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"designation",
+								"update-employees",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update designation of employee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMTk4MTAsImV4cCI6MTc0MzMyMDcxMH0.SX6gYHX4f4BawTF3moj8dAjIygiJD4gYjp2G6fEgTx0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"john.moe@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/designation/update-current-designation/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"designation",
+								"update-current-designation",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Designation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDM0NDA0OTksImV4cCI6MTc0MzQ0MTM5OX0.eG7avANbpyteCU87-IRFWJKqLW0ZyMJVl62S2pBY7XY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"SDE-II\",\r\n    \"description\": \"hring\",\r\n    \"adminEmail\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/designation/add-designation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"designation",
+								"add-designation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Del Designation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMTk4MTAsImV4cCI6MTc0MzMyMDcxMH0.SX6gYHX4f4BawTF3moj8dAjIygiJD4gYjp2G6fEgTx0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adminEmail\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/designation/delete-designation/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"designation",
+								"delete-designation",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Del Employee (Used by service-employee)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMyNjk5MTIsImV4cCI6MTc0MzI3MDgxMn0.OCOtrMpz2emSJZIvKZsI4ewpjZzRsHCdoiggsOYrtSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"john.doe@example.org\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/designation/delete-employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"designation",
+								"delete-employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add emp to designation (Used by emp-service)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMyNjk5MTIsImV4cCI6MTc0MzI3MDgxMn0.OCOtrMpz2emSJZIvKZsI4ewpjZzRsHCdoiggsOYrtSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/designation/add-employee-to-designation/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"designation",
+								"add-employee-to-designation",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Service-Attendance",
+			"item": [
+				{
+					"name": "Check In",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMjM4ODAsImV4cCI6MTc0MzMyNDc4MH0.tsBofJKKMufjk_1HDx3KVBQ4TP9SnyWS6Dj9-17sk0I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"john.doe@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/attendance/check-in",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"attendance",
+								"check-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Out",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMjM4ODAsImV4cCI6MTc0MzMyNDc4MH0.tsBofJKKMufjk_1HDx3KVBQ4TP9SnyWS6Dj9-17sk0I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"john.doe@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/attendance/check-out",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"attendance",
+								"check-out"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Holiday",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMyNjk5MTIsImV4cCI6MTc0MzI3MDgxMn0.OCOtrMpz2emSJZIvKZsI4ewpjZzRsHCdoiggsOYrtSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adminEmail\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/attendance/add-holiday/{date}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"attendance",
+								"add-holiday",
+								"{date}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Del Holiday",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMyNjk5MTIsImV4cCI6MTc0MzI3MDgxMn0.OCOtrMpz2emSJZIvKZsI4ewpjZzRsHCdoiggsOYrtSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adminEmail\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/attendance/delete-holiday{date}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"attendance",
+								"delete-holiday{date}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Permit Leave Req (used by service-leave-request)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMyNjk5MTIsImV4cCI6MTc0MzI3MDgxMn0.OCOtrMpz2emSJZIvKZsI4ewpjZzRsHCdoiggsOYrtSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"\",\r\n\t\"adminEmail\":  \"\",\r\n\t\"date\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/attendance/permit-leave-request",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"attendance",
+								"permit-leave-request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Employee Attendance",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMjYyOTEsImV4cCI6MTc0MzMyNzE5MX0.NZmoMTOmOgQJiSOCnzfFtA7h8l12AE6MALQwrCulVnA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"john.doe@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/attendance/get-employee-attendance",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"attendance",
+								"get-employee-attendance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register employee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMyNjk5MTIsImV4cCI6MTc0MzI3MDgxMn0.OCOtrMpz2emSJZIvKZsI4ewpjZzRsHCdoiggsOYrtSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"\",\r\n    \"adminEmail\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/attendance/register-employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"attendance",
+								"register-employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Del Emp Attendance",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMyNjk5MTIsImV4cCI6MTc0MzI3MDgxMn0.OCOtrMpz2emSJZIvKZsI4ewpjZzRsHCdoiggsOYrtSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"\",\r\n    \"adminEmail\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/attendance/delete-employee-records",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"attendance",
+								"delete-employee-records"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Service-Leave-Request",
+			"item": [
+				{
+					"name": "Get All leave req",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMjQ1MzcsImV4cCI6MTc0MzMyNTQzN30.B3DznY4LeG3jrjUE043jOOOSiv3ikZIb8a0HdahBL6c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adminEmail\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/leave-request/get-all-leave-request",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"leave-request",
+								"get-all-leave-request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Req",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMjQ1MzcsImV4cCI6MTc0MzMyNTQzN30.B3DznY4LeG3jrjUE043jOOOSiv3ikZIb8a0HdahBL6c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employee_email\": \"john.doe@example.com\",\r\n    \"leaveDate\": \"2025-04-03\",\r\n    \"reason\": \"lol\",\r\n    \"type\": \"UNPAID\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/leave-request/create-request",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"leave-request",
+								"create-request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Emp LR",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMjQ1MzcsImV4cCI6MTc0MzMyNTQzN30.B3DznY4LeG3jrjUE043jOOOSiv3ikZIb8a0HdahBL6c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"john.moe@example.com\",\r\n    \"onlyPending\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/leave-request/get-employee-leave-request",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"leave-request",
+								"get-employee-leave-request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Grant Req",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMjQ1MzcsImV4cCI6MTc0MzMyNTQzN30.B3DznY4LeG3jrjUE043jOOOSiv3ikZIb8a0HdahBL6c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adminEmail\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/leave-request/grant/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"leave-request",
+								"grant",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deny Req",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMjQ1MzcsImV4cCI6MTc0MzMyNTQzN30.B3DznY4LeG3jrjUE043jOOOSiv3ikZIb8a0HdahBL6c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adminEmail\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/leave-request/deny/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"leave-request",
+								"deny",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Service-Notification",
+			"item": [
+				{
+					"name": "Add Notification",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMjQ1MzcsImV4cCI6MTc0MzMyNTQzN30.B3DznY4LeG3jrjUE043jOOOSiv3ikZIb8a0HdahBL6c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\": \"hello how u doigg\",\r\n\t\"adminEmail\": \"nishit.chaudhary@opl.com\",\r\n\t\"teams\": [],\r\n\t\"departments\": [1],\r\n\t\"designations\": [1]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/notification/add-notification",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"notification",
+								"add-notification"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Del Notification",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMjQ1MzcsImV4cCI6MTc0MzMyNTQzN30.B3DznY4LeG3jrjUE043jOOOSiv3ikZIb8a0HdahBL6c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adminEmail\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/notification/deleteNotification/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"notification",
+								"deleteNotification",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Emp Notifs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMjQ1MzcsImV4cCI6MTc0MzMyNTQzN30.B3DznY4LeG3jrjUE043jOOOSiv3ikZIb8a0HdahBL6c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeEmail\": \"john.moe@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/notification/get-emplyoyee-notifications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"notification",
+								"get-emplyoyee-notifications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Notifs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMjQ1MzcsImV4cCI6MTc0MzMyNTQzN30.B3DznY4LeG3jrjUE043jOOOSiv3ikZIb8a0HdahBL6c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adminEmail\": \"nishit.chaudhary@opl.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/notification/get-all-notifications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"notification",
+								"get-all-notifications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Filtered Notifs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaXNoaXQuY2hhdWRoYXJ5QG9wbC5jb20iLCJpYXQiOjE3NDMzMjQ1MzcsImV4cCI6MTc0MzMyNTQzN30.B3DznY4LeG3jrjUE043jOOOSiv3ikZIb8a0HdahBL6c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adminEmail\": \"nishit.chaudhary@opl.com\",\r\n    \"teams\": [1],\r\n    \"departments\": [1],\r\n    \"designations\": [1]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5555/notification/get-filtered-notifications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"notification",
+								"get-filtered-notifications"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
