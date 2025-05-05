@@ -108,4 +108,68 @@ com.backend.task
 ├── utils              # JWT utility and helpers
 └── TaskApplication.java
 
+
+
+
+
+Nishit:-
+
+class Solution {
+ 
+    // Return the size of the largest sub-tree which is also a BST
+
+    static int[] max = new int[1];
+
+    static int largestBst(Node root) {
+
+       find(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+
+       return max[0];
+
+    }
+
+    static Pair find(Node node, int min, int max)
+
+    {
+
+        if(node == null) return new Pair(true, 0);
+
+        Pair left = find(node.left, min, node.data);
+
+        Pair right = find(node.right, node.data, max);
+
+        int val = node.data;
+
+        if(!(val >= min && val <= max) || !left.isBST || !right.isBST) return new Pair(false, 0);
+
+        Pair newPair = new Pair(true, 1 + left.totalNodes + right.totalNodes);
+
+        max[0] = Math.max(max[0], newPair.totalNodes);
+
+        return newPair;
+
+    }
+
+    static class Pair
+
+    {
+
+        boolean isBST;
+
+        int totalNodes;
+
+        public Pair(boolean a, int b)
+
+        {
+
+            isBST = a;
+
+            totalNodes = b;
+
+        }
+
+    }
+
+}
+ 
  
